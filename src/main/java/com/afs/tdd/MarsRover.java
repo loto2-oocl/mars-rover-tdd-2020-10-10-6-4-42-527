@@ -60,14 +60,21 @@ public class MarsRover {
     }
 
     private void turnRight() {
-        if (this.getDirection().equals(NORTH)) {
-            this.setDirection(EAST);
-        } else if (this.getDirection().equals(EAST)) {
-            this.setDirection(SOUTH);
-        } else if (this.getDirection().equals(SOUTH)) {
-            this.setDirection(WEST);
-        } else if (this.getDirection().equals(WEST)) {
-            this.setDirection(NORTH);
+        switch (this.getDirection()) {
+            case NORTH:
+                this.setDirection(EAST);
+                break;
+            case EAST:
+                this.setDirection(SOUTH);
+                break;
+            case SOUTH:
+                this.setDirection(WEST);
+                break;
+            case WEST:
+                this.setDirection(NORTH);
+                break;
+            default:
+                break;
         }
     }
 
