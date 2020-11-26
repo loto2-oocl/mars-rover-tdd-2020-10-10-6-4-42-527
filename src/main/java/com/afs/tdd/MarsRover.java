@@ -66,6 +66,8 @@ public class MarsRover {
             this.setDirection(SOUTH);
         } else if (this.getDirection().equals(SOUTH)) {
             this.setDirection(WEST);
+        } else if (this.getDirection().equals(WEST)) {
+            this.setDirection(NORTH);
         }
     }
 
