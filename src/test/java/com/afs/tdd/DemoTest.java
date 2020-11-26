@@ -185,4 +185,19 @@ class DemoTest {
         assertEquals(0, marsRover.getLocationY());
         assertEquals("N", marsRover.getDirection());
     }
+
+    @Test
+    void should_return_E_to_N_and_location_0_1_direction_when_execute_multiple_commands_given_0_0_E_LM() {
+        // given
+        String commands = "LM";
+        MarsRover marsRover = new MarsRover(0, 0, "E");
+
+        // when
+        marsRover.executeCommands(commands);
+
+        // then
+        assertEquals(0, marsRover.getLocationX());
+        assertEquals(1, marsRover.getLocationY());
+        assertEquals("N", marsRover.getDirection());
+    }
 }

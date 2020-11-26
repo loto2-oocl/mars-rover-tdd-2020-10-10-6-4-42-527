@@ -119,4 +119,7 @@ public class MarsRover {
             this.setLocationXMinusOne();
         }
     }
+
+    public void executeCommands(String commands) {
+    }
 }
