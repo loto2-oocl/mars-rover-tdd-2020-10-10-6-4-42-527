@@ -1,15 +1,14 @@
 package com.afs.tdd;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class MarsRover {
     public static final String NORTH = "N";
     public static final String EAST = "E";
     public static final String SOUTH = "S";
     public static final String WEST = "W";
-    public static final String MOVE_COMMAND = "M";
-    public static final String TURN_RIGHT_COMMAND = "R";
-    public static final String TURN_LEFT_COMMAND = "L";
+
     private String direction;
     private Integer locationX;
     private Integer locationY;
@@ -52,78 +51,11 @@ public class MarsRover {
         this.direction = direction;
     }
 
-    public void executeCommand(String command) {
-        if (command.equals(MOVE_COMMAND)) {
-            this.move();
-        }
-
-        if (command.equals(TURN_RIGHT_COMMAND)) {
-            this.turnRight();
-        }
-
-        if (command.equals(TURN_LEFT_COMMAND)) {
-            this.turnLeft();
-        }
+    public void executeCommand(RoverCommand command) {
+        command.execute(this);
     }
 
-    private void turnLeft() {
-        switch (this.getDirection()) {
-            case NORTH:
-                this.setDirection(WEST);
-                break;
-            case WEST:
-                this.setDirection(SOUTH);
-                break;
-            case SOUTH:
-                this.setDirection(EAST);
-                break;
-            case EAST:
-                this.setDirection(NORTH);
-                break;
-            default:
-                break;
-        }
-    }
-
-    private void turnRight() {
-        switch (this.getDirection()) {
-            case NORTH:
-                this.setDirection(EAST);
-                break;
-            case EAST:
-                this.setDirection(SOUTH);
-                break;
-            case SOUTH:
-                this.setDirection(WEST);
-                break;
-            case WEST:
-                this.setDirection(NORTH);
-                break;
-            default:
-                break;
-        }
-    }
-
-    public void move() {
-        if (this.getDirection().equals(NORTH)) {
-            this.setLocationYPlusOne();
-        }
-
-        if (this.getDirection().equals(EAST)) {
-            this.setLocationXPlusOne();
-        }
-
-        if (this.getDirection().equals(SOUTH)) {
-            this.setLocationYMinusOne();
-        }
-
-        if (this.getDirection().equals(WEST)) {
-            this.setLocationXMinusOne();
-        }
-    }
-
-    public void executeCommands(String commands) {
-        Arrays.stream(commands.split(""))
-            .forEachOrdered(this::executeCommand);
+    public void executeCommands(List<RoverCommand> commands) {
+        commands.forEach(this::executeCommand);
     }
 }
