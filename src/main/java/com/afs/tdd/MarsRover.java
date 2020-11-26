@@ -7,6 +7,7 @@ public class MarsRover {
     public static final String WEST = "W";
     public static final String MOVE_COMMAND = "M";
     public static final String TURN_RIGHT_COMMAND = "R";
+    public static final String TURN_LEFT_COMMAND = "L";
     private String direction;
     private Integer locationX;
     private Integer locationY;
@@ -56,6 +57,20 @@ public class MarsRover {
 
         if (command.equals(TURN_RIGHT_COMMAND)) {
             this.turnRight();
+        }
+
+        if(command.equals(TURN_LEFT_COMMAND)) {
+            this.turnLeft();
+        }
+    }
+
+    private void turnLeft() {
+        switch (this.getDirection()) {
+            case NORTH:
+                this.setDirection(WEST);
+                break;
+            default:
+                break;
         }
     }
 
