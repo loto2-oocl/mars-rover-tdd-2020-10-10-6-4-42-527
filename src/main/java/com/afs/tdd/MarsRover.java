@@ -59,7 +59,7 @@ public class MarsRover {
             this.turnRight();
         }
 
-        if(command.equals(TURN_LEFT_COMMAND)) {
+        if (command.equals(TURN_LEFT_COMMAND)) {
             this.turnLeft();
         }
     }
@@ -68,6 +68,9 @@ public class MarsRover {
         switch (this.getDirection()) {
             case NORTH:
                 this.setDirection(WEST);
+                break;
+            case WEST:
+                this.setDirection(SOUTH);
                 break;
             default:
                 break;
