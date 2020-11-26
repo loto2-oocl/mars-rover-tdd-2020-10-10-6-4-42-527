@@ -1,6 +1,11 @@
 package com.afs.tdd;
 
 public class MarsRover {
+    public static final String NORTH = "N";
+    public static final String EAST = "E";
+    public static final String SOUTH = "S";
+    public static final String WEST = "W";
+    public static final String MOVE_COMMAND = "M";
     private final String direction;
     private Integer locationX;
     private Integer locationY;
@@ -40,20 +45,20 @@ public class MarsRover {
     }
 
     public void executeCommand(String command) {
-        if (command.equals("M")) {
-            if (this.getDirection().equals("N")) {
+        if (command.equals(MOVE_COMMAND)) {
+            if (this.getDirection().equals(NORTH)) {
                 this.setLocationYPlusOne();
             }
 
-            if (this.getDirection().equals("E")) {
+            if (this.getDirection().equals(EAST)) {
                 this.setLocationXPlusOne();
             }
 
-            if (this.getDirection().equals("S")) {
+            if (this.getDirection().equals(SOUTH)) {
                 this.setLocationYMinusOne();
             }
 
-            if (this.getDirection().equals("W")) {
+            if (this.getDirection().equals(WEST)) {
                 this.setLocationXMinusOne();
             }
         }
