@@ -1,9 +1,10 @@
 package com.afs.tdd;
 
+import javax.naming.ldap.Control;
 import java.util.Arrays;
 import java.util.List;
 
-public class MarsRover {
+public class MarsRover implements RoverProgram {
     public static final String NORTH = "N";
     public static final String EAST = "E";
     public static final String SOUTH = "S";
@@ -51,10 +52,12 @@ public class MarsRover {
         this.direction = direction;
     }
 
+    @Override
     public void executeCommand(RoverCommand command) {
         command.execute(this);
     }
 
+    @Override
     public void executeCommands(List<RoverCommand> commands) {
         commands.forEach(this::executeCommand);
     }
