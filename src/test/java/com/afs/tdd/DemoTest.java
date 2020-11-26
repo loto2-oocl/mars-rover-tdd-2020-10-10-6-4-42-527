@@ -50,4 +50,18 @@ class DemoTest {
         assertEquals("S", marsRover.getDirection());
     }
 
+    @Test
+    void should_return_x_minus_1_when_execute_command_given_0_0_W_M() {
+        // given
+        String command = "M";
+        MarsRover marsRover = new MarsRover(0, 0, "W");
+
+        // when
+        marsRover.executeCommand(command);
+
+        // then
+        assertEquals(-1, marsRover.getLocationX());
+        assertEquals(0, marsRover.getLocationY());
+        assertEquals("W", marsRover.getDirection());
+    }
 }
