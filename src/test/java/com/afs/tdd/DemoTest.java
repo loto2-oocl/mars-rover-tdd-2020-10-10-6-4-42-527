@@ -79,4 +79,19 @@ class DemoTest {
         assertEquals(0, marsRover.getLocationY());
         assertEquals("E", marsRover.getDirection());
     }
+
+    @Test
+    void should_return_E_to_S_direction_when_execute_command_given_0_0_E_R() {
+        // given
+        String command = "R";
+        MarsRover marsRover = new MarsRover(0, 0, "E");
+
+        // when
+        marsRover.executeCommand(command);
+
+        // then
+        assertEquals(0, marsRover.getLocationX());
+        assertEquals(0, marsRover.getLocationY());
+        assertEquals("S", marsRover.getDirection());
+    }
 }
