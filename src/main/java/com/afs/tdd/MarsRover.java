@@ -46,21 +46,25 @@ public class MarsRover {
 
     public void executeCommand(String command) {
         if (command.equals(MOVE_COMMAND)) {
-            if (this.getDirection().equals(NORTH)) {
-                this.setLocationYPlusOne();
-            }
+            this.move();
+        }
+    }
+    
+    public void move() {
+        if (this.getDirection().equals(NORTH)) {
+            this.setLocationYPlusOne();
+        }
 
-            if (this.getDirection().equals(EAST)) {
-                this.setLocationXPlusOne();
-            }
+        if (this.getDirection().equals(EAST)) {
+            this.setLocationXPlusOne();
+        }
 
-            if (this.getDirection().equals(SOUTH)) {
-                this.setLocationYMinusOne();
-            }
+        if (this.getDirection().equals(SOUTH)) {
+            this.setLocationYMinusOne();
+        }
 
-            if (this.getDirection().equals(WEST)) {
-                this.setLocationXMinusOne();
-            }
+        if (this.getDirection().equals(WEST)) {
+            this.setLocationXMinusOne();
         }
     }
 }
