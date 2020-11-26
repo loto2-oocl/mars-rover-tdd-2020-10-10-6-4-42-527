@@ -2,13 +2,16 @@ package com.afs.tdd;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DemoTest {
     @Test
     void should_return_y_plus_1_when_execute_command_given_0_0_N_M() {
         // given
-        String command = "M";
+        MoveCommand command = new MoveCommand();
         MarsRover marsRover = new MarsRover(0, 0, "N");
 
         // when
@@ -23,7 +26,7 @@ class DemoTest {
     @Test
     void should_return_x_plus_1_when_execute_command_given_0_0_E_M() {
         // given
-        String command = "M";
+        MoveCommand command = new MoveCommand();
         MarsRover marsRover = new MarsRover(0, 0, "E");
 
         // when
@@ -38,7 +41,7 @@ class DemoTest {
     @Test
     void should_return_y_minus_1_when_execute_command_given_0_0_S_M() {
         // given
-        String command = "M";
+        MoveCommand command = new MoveCommand();
         MarsRover marsRover = new MarsRover(0, 0, "S");
 
         // when
@@ -53,7 +56,7 @@ class DemoTest {
     @Test
     void should_return_x_minus_1_when_execute_command_given_0_0_W_M() {
         // given
-        String command = "M";
+        MoveCommand command = new MoveCommand();
         MarsRover marsRover = new MarsRover(0, 0, "W");
 
         // when
@@ -68,7 +71,7 @@ class DemoTest {
     @Test
     void should_return_N_to_E_direction_when_execute_command_given_0_0_N_R() {
         // given
-        String command = "R";
+        TurnRightCommand command = new TurnRightCommand();
         MarsRover marsRover = new MarsRover(0, 0, "N");
 
         // when
@@ -83,7 +86,7 @@ class DemoTest {
     @Test
     void should_return_E_to_S_direction_when_execute_command_given_0_0_E_R() {
         // given
-        String command = "R";
+        TurnRightCommand command = new TurnRightCommand();
         MarsRover marsRover = new MarsRover(0, 0, "E");
 
         // when
@@ -99,7 +102,7 @@ class DemoTest {
     @Test
     void should_return_S_to_W_direction_when_execute_command_given_0_0_S_R() {
         // given
-        String command = "R";
+        TurnRightCommand command = new TurnRightCommand();
         MarsRover marsRover = new MarsRover(0, 0, "S");
 
         // when
@@ -114,7 +117,7 @@ class DemoTest {
     @Test
     void should_return_W_to_N_direction_when_execute_command_given_0_0_W_R() {
         // given
-        String command = "R";
+        TurnRightCommand command = new TurnRightCommand();
         MarsRover marsRover = new MarsRover(0, 0, "W");
 
         // when
@@ -129,7 +132,7 @@ class DemoTest {
     @Test
     void should_return_N_to_W_direction_when_execute_command_given_0_0_N_L() {
         // given
-        String command = "L";
+        TurnLeftCommand command = new TurnLeftCommand();
         MarsRover marsRover = new MarsRover(0, 0, "N");
 
         // when
@@ -144,7 +147,7 @@ class DemoTest {
     @Test
     void should_return_W_to_S_direction_when_execute_command_given_0_0_W_L() {
         // given
-        String command = "L";
+        TurnLeftCommand command = new TurnLeftCommand();
         MarsRover marsRover = new MarsRover(0, 0, "W");
 
         // when
@@ -159,7 +162,7 @@ class DemoTest {
     @Test
     void should_return_S_to_E_direction_when_execute_command_given_0_0_S_L() {
         // given
-        String command = "L";
+        TurnLeftCommand command = new TurnLeftCommand();
         MarsRover marsRover = new MarsRover(0, 0, "S");
 
         // when
@@ -174,7 +177,7 @@ class DemoTest {
     @Test
     void should_return_E_to_N_direction_when_execute_command_given_0_0_E_L() {
         // given
-        String command = "L";
+        TurnLeftCommand command = new TurnLeftCommand();
         MarsRover marsRover = new MarsRover(0, 0, "E");
 
         // when
@@ -189,7 +192,9 @@ class DemoTest {
     @Test
     void should_return_E_to_N_and_location_0_1_direction_when_execute_multiple_commands_given_0_0_E_LM() {
         // given
-        String commands = "LM";
+        List<RoverCommand> commands = new ArrayList<>();
+        commands.add(new TurnLeftCommand());
+        commands.add(new MoveCommand());
         MarsRover marsRover = new MarsRover(0, 0, "E");
 
         // when
