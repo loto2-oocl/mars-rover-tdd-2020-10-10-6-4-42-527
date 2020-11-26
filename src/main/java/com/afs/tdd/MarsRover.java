@@ -1,5 +1,7 @@
 package com.afs.tdd;
 
+import java.util.Arrays;
+
 public class MarsRover {
     public static final String NORTH = "N";
     public static final String EAST = "E";
@@ -121,5 +123,7 @@ public class MarsRover {
     }
 
     public void executeCommands(String commands) {
+        Arrays.stream(commands.split(""))
+            .forEachOrdered(this::executeCommand);
     }
 }
