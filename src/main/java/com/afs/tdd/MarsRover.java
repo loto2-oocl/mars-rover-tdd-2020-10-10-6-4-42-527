@@ -19,6 +19,10 @@ public class MarsRover {
         return locationY;
     }
 
+    public void setLocationXPlusOne() {
+        this.locationX += 1;
+    }
+
     public void setLocationYPlusOne() {
         this.locationY += 1;
     }
@@ -31,6 +35,10 @@ public class MarsRover {
         if (command.equals("M")) {
             if (this.getDirection().equals("N")) {
                 this.setLocationYPlusOne();
+            }
+
+            if (this.getDirection().equals("E")) {
+                this.setLocationXPlusOne();
             }
         }
     }
