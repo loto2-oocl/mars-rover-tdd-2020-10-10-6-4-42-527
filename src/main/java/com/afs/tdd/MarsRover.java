@@ -1,7 +1,5 @@
 package com.afs.tdd;
 
-import javax.naming.ldap.Control;
-import java.util.Arrays;
 import java.util.List;
 
 public class MarsRover implements RoverProgram {
