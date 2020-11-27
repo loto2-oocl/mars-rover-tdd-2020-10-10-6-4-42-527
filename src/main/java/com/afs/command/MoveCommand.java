@@ -1,4 +1,6 @@
-package com.afs.tdd;
+package com.afs.command;
+
+import com.afs.tdd.MarsRover;
 
 public class MoveCommand implements RoverCommand {
     @Override

@@ -1,5 +1,9 @@
 package com.afs.tdd;
 
+import com.afs.command.MoveCommand;
+import com.afs.command.RoverCommand;
+import com.afs.command.TurnLeftCommand;
+import com.afs.command.TurnRightCommand;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

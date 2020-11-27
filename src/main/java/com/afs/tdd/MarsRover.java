@@ -1,5 +1,7 @@
 package com.afs.tdd;
 
+import com.afs.command.RoverCommand;
+
 import java.util.List;
 
 public class MarsRover implements RoverProgram {
